@@ -1,4 +1,4 @@
-package com.denzelcode.form;
+package com.denzelcode.form.listener;
 
 import cn.nukkit.Player;
 import cn.nukkit.Server;
@@ -19,7 +19,7 @@ import com.denzelcode.form.window.SimpleWindowForm;
 
 import java.util.List;
 
-public class EventListener implements Listener {
+public class PlayerFormRespondedListener implements Listener {
 
     @EventHandler(priority = EventPriority.NORMAL)
     public void onResponded(PlayerFormRespondedEvent event) {
@@ -51,7 +51,9 @@ public class EventListener implements Listener {
             ModalFormSubmitEvent e = new ModalFormSubmitEvent(
                     player,
                     window,
-                    !window.wasClosed() && window.getResponse().getClickedButtonText().equals(window.getAcceptButton())
+                    !window.wasClosed() && window.getResponse().getClickedButtonText().equals(
+                            window.getAcceptButton()
+                    )
             );
 
             window.dispatchHandlers(e);

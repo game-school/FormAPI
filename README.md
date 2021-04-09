@@ -23,7 +23,7 @@ Download the latest JAR: https://github.com/DenzelCode/FormAPI/releases/latest
 
 In case you don't want to put it inside of plugins just execute this line of code inside of your plugin to run the EventListener:
 ```
-getServer().getPluginManager().registerEvents(new com.denzelcode.form.EventListener(), this);
+getServer().getPluginManager().registerEvents(new com.denzelcode.form.listener.PlayerFormRespondedListener(), this);
 ```
 
 ## Example:

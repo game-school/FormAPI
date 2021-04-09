@@ -1,7 +1,9 @@
 package com.denzelcode.form;
 
+import cn.nukkit.Server;
 import cn.nukkit.form.element.Element;
 import cn.nukkit.plugin.PluginBase;
+import com.denzelcode.form.listener.PlayerFormRespondedListener;
 import com.denzelcode.form.window.CustomWindowForm;
 import com.denzelcode.form.window.ModalWindowForm;
 import com.denzelcode.form.window.SimpleWindowForm;
@@ -9,6 +11,10 @@ import com.denzelcode.form.window.SimpleWindowForm;
 import java.util.List;
 
 public class FormAPI extends PluginBase {
+
+    public static void init(PluginBase plugin) {
+        Server.getInstance().getPluginManager().registerEvents(new PlayerFormRespondedListener(), plugin);
+    }
 
     public static SimpleWindowForm simpleWindowForm(String title) {
         return new SimpleWindowForm(title);
@@ -44,6 +50,6 @@ public class FormAPI extends PluginBase {
 
     @Override
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(new EventListener(), this);
+        init(this);
     }
 }

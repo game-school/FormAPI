@@ -117,7 +117,7 @@ public class SimpleWindowForm extends FormWindowSimple implements IWindowForm<Si
             public void onRun(int i) {
                 player.sendAttributes();
             }
-        }, 20, true);
+        }, 20);
     }
 
     public Button getElement(String name) {
