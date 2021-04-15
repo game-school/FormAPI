@@ -35,12 +35,16 @@ public class ModalWindowForm extends FormWindowModal implements IWindowForm<Moda
         return super.getButton2();
     }
 
-    public void setAcceptButton(String button1) {
+    public ModalWindowForm setAcceptButton(String button1) {
         super.setButton1(button1);
+
+        return this;
     }
 
-    public void setCancelButton(String button2) {
+    public ModalWindowForm setCancelButton(String button2) {
         super.setButton2(button2);
+
+        return this;
     }
 
     @Override
