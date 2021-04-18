@@ -2,8 +2,11 @@ package com.denzelcode.form.window;
 
 import cn.nukkit.Player;
 import cn.nukkit.Server;
+import cn.nukkit.form.window.FormWindow;
 import cn.nukkit.form.window.FormWindowModal;
+import cn.nukkit.scheduler.ServerScheduler;
 import cn.nukkit.scheduler.Task;
+import com.denzelcode.form.FormAPI;
 import com.denzelcode.form.event.ModalFormSubmitEvent;
 import com.denzelcode.form.handler.IHandler;
 
@@ -81,16 +84,7 @@ public class ModalWindowForm extends FormWindowModal implements IWindowForm<Moda
 
     @Override
     public void sendTo(Player player) {
-        if (player == null) return;
-
-        player.showFormWindow(this);
-
-        Server.getInstance().getScheduler().scheduleDelayedTask(new Task() {
-            @Override
-            public void onRun(int i) {
-                player.sendAttributes();
-            }
-        }, 20);
+        FormAPI.sendWindow(player, this);
     }
 
     @Override

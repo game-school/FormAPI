@@ -5,6 +5,7 @@ import cn.nukkit.Server;
 import cn.nukkit.form.element.ElementButton;
 import cn.nukkit.form.window.FormWindowSimple;
 import cn.nukkit.scheduler.Task;
+import com.denzelcode.form.FormAPI;
 import com.denzelcode.form.element.Button;
 import com.denzelcode.form.element.ImageType;
 import com.denzelcode.form.event.SimpleFormButtonClickEvent;
@@ -108,16 +109,7 @@ public class SimpleWindowForm extends FormWindowSimple implements IWindowForm<Si
 
     @Override
     public void sendTo(Player player) {
-        if (player == null) return;
-
-        player.showFormWindow(this);
-
-        Server.getInstance().getScheduler().scheduleDelayedTask(new Task() {
-            @Override
-            public void onRun(int i) {
-                player.sendAttributes();
-            }
-        }, 20);
+        FormAPI.sendWindow(player, this);
     }
 
     public Button getElement(String name) {

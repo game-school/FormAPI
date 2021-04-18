@@ -6,6 +6,7 @@ import cn.nukkit.form.element.Element;
 import cn.nukkit.form.element.ElementButtonImageData;
 import cn.nukkit.form.window.FormWindowCustom;
 import cn.nukkit.scheduler.Task;
+import com.denzelcode.form.FormAPI;
 import com.denzelcode.form.element.*;
 import com.denzelcode.form.event.CustomFormSubmitEvent;
 import com.denzelcode.form.handler.IHandler;
@@ -240,16 +241,7 @@ public class CustomWindowForm extends FormWindowCustom implements IWindowForm<Cu
 
     @Override
     public void sendTo(Player player) {
-        if (player == null) return;
-
-        player.showFormWindow(this);
-
-        Server.getInstance().getScheduler().scheduleDelayedTask(new Task() {
-            @Override
-            public void onRun(int i) {
-                player.sendAttributes();
-            }
-        }, 20);
+        FormAPI.sendWindow(player, this);
     }
 
     @Override
