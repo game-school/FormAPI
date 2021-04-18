@@ -22,6 +22,10 @@ public class FormEvent<T extends IWindowForm<?, ?>> extends PlayerEvent {
         return form.wasClosed();
     }
 
+    public boolean wasClosed() {
+        return form.wasClosed();
+    }
+
     public boolean isValid(String formName) {
         return form.isValid(formName);
     }
