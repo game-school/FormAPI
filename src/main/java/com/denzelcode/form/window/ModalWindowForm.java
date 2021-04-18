@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class ModalWindowForm extends FormWindowModal implements IWindowForm<ModalFormSubmitEvent> {
+public class ModalWindowForm extends FormWindowModal implements IWindowForm<ModalWindowForm, ModalFormSubmitEvent> {
 
     List<IHandler<ModalFormSubmitEvent>> handlers = new ArrayList<>();
 
@@ -61,7 +61,7 @@ public class ModalWindowForm extends FormWindowModal implements IWindowForm<Moda
     }
 
     @Override
-    public IWindowForm<ModalFormSubmitEvent> addHandler(IHandler<ModalFormSubmitEvent> handler) {
+    public ModalWindowForm addHandler(IHandler<ModalFormSubmitEvent> handler) {
         handlers.add(handler);
 
         return this;

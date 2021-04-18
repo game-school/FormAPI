@@ -1,12 +1,14 @@
 package com.denzelcode.form.window;
 
 import cn.nukkit.Player;
+import cn.nukkit.form.window.FormWindow;
 import com.denzelcode.form.event.FormEvent;
 import com.denzelcode.form.handler.IHandler;
 
 import java.util.List;
 
-public interface IWindowForm<T extends FormEvent<?>> {
+@SuppressWarnings("rawtypes")
+public interface IWindowForm<F extends IWindowForm, T extends FormEvent<?>> {
 
     String getName();
 
@@ -16,7 +18,7 @@ public interface IWindowForm<T extends FormEvent<?>> {
 
     boolean isValid(String formName);
 
-    IWindowForm<T> addHandler(IHandler<T> handler);
+    F addHandler(IHandler<T> handler);
 
     void clearHandlers();
 

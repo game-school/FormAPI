@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class CustomWindowForm extends FormWindowCustom implements IWindowForm<CustomFormSubmitEvent> {
+public class CustomWindowForm extends FormWindowCustom implements IWindowForm<CustomWindowForm, CustomFormSubmitEvent> {
     List<IHandler<CustomFormSubmitEvent>> handlers = new ArrayList<>();
 
     protected String name = UUID.randomUUID().toString();
@@ -218,7 +218,7 @@ public class CustomWindowForm extends FormWindowCustom implements IWindowForm<Cu
     }
 
     @Override
-    public IWindowForm<CustomFormSubmitEvent> addHandler(IHandler<CustomFormSubmitEvent> handler) {
+    public CustomWindowForm addHandler(IHandler<CustomFormSubmitEvent> handler) {
         handlers.add(handler);
 
         return this;

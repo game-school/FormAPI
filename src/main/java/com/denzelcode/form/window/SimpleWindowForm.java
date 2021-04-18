@@ -1,10 +1,8 @@
 package com.denzelcode.form.window;
 
 import cn.nukkit.Player;
-import cn.nukkit.Server;
 import cn.nukkit.form.element.ElementButton;
 import cn.nukkit.form.window.FormWindowSimple;
-import cn.nukkit.scheduler.Task;
 import com.denzelcode.form.FormAPI;
 import com.denzelcode.form.element.Button;
 import com.denzelcode.form.element.ImageType;
@@ -15,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class SimpleWindowForm extends FormWindowSimple implements IWindowForm<SimpleFormButtonClickEvent> {
+public class SimpleWindowForm extends FormWindowSimple implements IWindowForm<SimpleWindowForm, SimpleFormButtonClickEvent> {
 
     List<IHandler<SimpleFormButtonClickEvent>> handlers = new ArrayList<>();
 
@@ -81,7 +79,7 @@ public class SimpleWindowForm extends FormWindowSimple implements IWindowForm<Si
     }
 
     @Override
-    public IWindowForm<SimpleFormButtonClickEvent> addHandler(IHandler<SimpleFormButtonClickEvent> handler) {
+    public SimpleWindowForm addHandler(IHandler<SimpleFormButtonClickEvent> handler) {
         handlers.add(handler);
 
         return this;
