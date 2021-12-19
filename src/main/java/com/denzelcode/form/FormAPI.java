@@ -69,7 +69,7 @@ public class FormAPI extends PluginBase {
                 scheduler.scheduleDelayedTask(new Task() {
                     @Override
                     public void onRun(int i) {
-                        player.sendAttributes();
+                        player.sendExperience();
                     }
                 }, 20);
             }
