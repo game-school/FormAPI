@@ -78,8 +78,9 @@ public class ModalWindowForm extends FormWindowModal implements IWindowForm<Moda
     }
 
     @Override
-    public List<IHandler<ModalFormSubmitEvent>> getHandlers() {
-        return handlers;
+    public List<IHandler<ModalFormSubmitEvent>> getWindowFormHandlers() {
+//        return handlers;
+        return null;
     }
 
     @Override

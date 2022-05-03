@@ -24,5 +24,5 @@ public interface IWindowForm<F extends IWindowForm, T extends FormEvent<?>> {
 
     void dispatchHandlers(T event);
 
-    List<IHandler<T>> getHandlers();
+    List<IHandler<T>> getWindowFormHandlers();
 }

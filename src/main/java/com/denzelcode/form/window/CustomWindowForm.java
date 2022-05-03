@@ -235,8 +235,8 @@ public class CustomWindowForm extends FormWindowCustom implements IWindowForm<Cu
     }
 
     @Override
-    public List<IHandler<CustomFormSubmitEvent>> getHandlers() {
-        return handlers;
+    public List<IHandler<CustomFormSubmitEvent>> getWindowFormHandlers() {
+        return null;
     }
 
     @Override
